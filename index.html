@@ -21,6 +21,9 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer">
     </script>
+
+    <script src="app.js"></script>
+
     <script>
         // Create a Pixi.js application with a full-screen canvas
         const app = new PIXI.Application({
@@ -33,21 +36,7 @@
         // Add the canvas element to the HTML body
         document.body.appendChild(app.view);
 
-        // Create a Pixi.js text object with the text "hello"
-        const text = new PIXI.Text("hello", {
-            fontFamily: "Arial",
-            fontSize: 36,
-            fill: "white",
-            align: "center",
-        });
-
-        // Set the position of the text object to the center of the canvas
-        text.anchor.set(0.5);
-        text.x = app.renderer.width / 2;
-        text.y = app.renderer.height / 2;
-
-        // Add the text object to the Pixi.js stage
-        app.stage.addChild(text);
+        handle_app(app.stage);
     </script>
 </body>
 </html>
