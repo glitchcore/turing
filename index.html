@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pixi.js Full-Screen Canvas Example</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"
+            integrity="sha512-Ch/O6kL8BqUwAfCF7Ie5SX1Hin+BJgYH4pNjRqXdTEqMsis1TUYg+j6nnI9uduPjGaj7DN4UKCZgpvoExt6dkw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer">
+    </script>
+    <script>
+        // Create a Pixi.js application with a full-screen canvas
+        const app = new PIXI.Application({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            backgroundColor: 0x1099bb,
+            resizeTo: window,
+        });
+
+        // Add the canvas element to the HTML body
+        document.body.appendChild(app.view);
+
+        // Create a Pixi.js text object with the text "hello"
+        const text = new PIXI.Text("hello", {
+            fontFamily: "Arial",
+            fontSize: 36,
+            fill: "white",
+            align: "center",
+        });
+
+        // Set the position of the text object to the center of the canvas
+        text.anchor.set(0.5);
+        text.x = app.renderer.width / 2;
+        text.y = app.renderer.height / 2;
+
+        // Add the text object to the Pixi.js stage
+        app.stage.addChild(text);
+    </script>
+</body>
+</html>
